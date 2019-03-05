@@ -45,16 +45,6 @@ public class CustomView extends View {
     }
 
     @Override
-    protected void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-    }
-
-    @Override
-    public void draw(Canvas canvas) {
-        super.draw(canvas);
-    }
-
-    @Override
     protected void onDraw(Canvas canvas) {
         Log.d(TAG, "inside onDraw -");
         drawLabel(canvas);
