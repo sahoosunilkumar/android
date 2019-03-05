@@ -34,14 +34,18 @@ public class CustomView extends View {
 
     @Override
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
-        Log.d(TAG, "inside onLayout - " + changed);
-        super.onLayout(changed, left, top, right, bottom);
+        Log.d(TAG, "inside onLayout - "+changed+" left : "+left);
+        if (left == 0) {
+            layout(50, 100, right, bottom);
+        } else {
+            super.onLayout(changed, left, top, right, bottom);
+        }
     }
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         Log.d(TAG, "inside onMeasure -" + widthMeasureSpec + " : " + heightMeasureSpec);
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        setMeasuredDimension(800, 300);
     }
 
     @Override
@@ -61,12 +65,6 @@ public class CustomView extends View {
         labelPaint.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
         setSaveEnabled(true);
     }
-
-    @Override
-    protected void onAttachedToWindow() {
-        super.onAttachedToWindow();
-    }
-
 
     private void drawLabel(Canvas canvas) {
         float x = getPaddingLeft();

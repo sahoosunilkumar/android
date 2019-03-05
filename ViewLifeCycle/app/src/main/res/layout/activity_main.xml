@@ -14,5 +14,6 @@
         android:id="@+id/customview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:text="@string/app_name" />
+        app:text="@string/app_name"
+        android:background="@color/colorAccent"/>
 </LinearLayout>
